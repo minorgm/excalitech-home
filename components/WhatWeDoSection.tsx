@@ -3,7 +3,7 @@ import { Palette, Code, Search } from "lucide-react";
 
 export default function WhatWeDoSection() {
   return (
-    <section className="px-6 py-16 max-w-7xl mx-auto">
+    <section className="px-6 py-16 max-w-7xl mx-auto" aria-label="What We Do">
       <h2 className="text-4xl font-bold text-[#0f1717] mb-12">What We Do</h2>
       <div className="grid md:grid-cols-3 gap-8">
         <Card className="border-[#e5e8eb] hover:shadow-lg transition-shadow">

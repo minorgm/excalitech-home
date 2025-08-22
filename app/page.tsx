@@ -7,13 +7,23 @@ import Footer from "../components/Footer";
 
 export default function ExcalitechHomepage() {
   return (
-    <div className="min-h-screen bg-[#ffffff]">
+    <>
       <Header />
-      <HeroSection />
-      <WhatWeDoSection />
-      <FeaturedProjectsSection />
-      <CallToActionSection />
+      <main className="min-h-screen bg-[#ffffff]">
+        <section aria-label="Hero">
+          <HeroSection />
+        </section>
+        <section aria-label="What We Do">
+          <WhatWeDoSection />
+        </section>
+        <section aria-label="Featured Projects">
+          <FeaturedProjectsSection />
+        </section>
+        <section aria-label="Call To Action">
+          <CallToActionSection />
+        </section>
+      </main>
       <Footer />
-    </div>
+    </>
   );
 }

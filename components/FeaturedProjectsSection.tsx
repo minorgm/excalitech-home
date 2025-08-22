@@ -27,7 +27,7 @@ const projects = [
 
 export default function FeaturedProjectsSection() {
   return (
-    <section className="px-6 py-16 max-w-7xl mx-auto">
+    <section className="px-6 py-16 max-w-7xl mx-auto" aria-label="Featured Projects">
       <h2 className="text-4xl font-bold text-[#0f1717] mb-12">Featured Projects</h2>
       <div className="grid md:grid-cols-3 gap-8">
         {projects.map((project) => (
