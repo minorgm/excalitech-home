@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
+import { postFormInformation } from "@/utils/endpoints";
 
 function validateField(name: string, value: string) {
   switch (name) {
@@ -45,7 +46,7 @@ export default function ContactForm() {
     setErrors(prev => ({ ...prev, [name]: validateField(name, value) }));
   }
 
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     const newErrors = {
       name: validateField("name", form.name),
@@ -55,8 +56,16 @@ export default function ContactForm() {
     setErrors(newErrors);
     const hasError = Object.values(newErrors).some(Boolean);
     if (hasError) return;
-    setSubmitted(true);
-    // Here you would send the form data to your backend or service
+
+    const response = await postFormInformation(form)
+
+    if(response === true) {
+      setSubmitted(true);
+    }
+    else {
+      // Implement error option
+      console.log("Internal Server Error.")
+    }
   }
 
   if (submitted) {
